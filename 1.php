@@ -1,6 +1,6 @@
 <?php 
 
-echo "2nd commit ";
+echo "3 commit";
 
 echo "Hello worldh ";
 
