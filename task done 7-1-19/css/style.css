@@ -1,0 +1,155 @@
+body
+{
+
+background-image: url(images\banner3.jpg);
+font-family: 'Roboto', sans-serif;
+
+}
+
+
+
+.headerformat
+{
+
+    background-image: url("images/banner3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+
+
+
+
+}
+.headerformatimg
+{
+	padding-top: 10px;
+   padding-left:30px;
+ 	width: 150px;
+	height:60px;
+}
+
+
+.menu{
+
+	display:flex;
+
+} 
+
+li
+{
+flex-direction: row;
+list-style-type: none;
+
+}
+
+header{
+
+
+
+}
+.headertext
+{
+font-size: 11px;
+  font-weight: bold;
+
+}
+
+.headerimage
+{
+position: absolute;
+  top: -80px;
+  left:0px;
+ height: 380px;
+
+
+border-bottom-color:  #ccc;
+border-bottom-style: solid;
+}
+nav{
+
+
+border-bottom-color:  #ccc;
+border-bottom-style: solid;
+
+}
+
+#imagetext{
+
+
+	position: relative;
+	color: white;
+     font-size: 18px;
+     padding-top: 210px;
+     padding-left: 550px;
+  font-weight: bold;
+}
+.blue
+{
+color:00acc1;
+
+}
+
+.bluebold
+{
+color:00acc1;
+font-weight: bold;
+
+}
+
+.bluebold36px
+{
+color:00acc1;
+font-weight: bold;
+font-size: 36px;
+
+}
+.pink
+{
+
+ color:e53b51;
+}
+.pinkbold
+{
+
+ color:e53b51;
+ font-weight: bold;
+}
+.blueback
+{
+
+	background-color:00acc1 ;
+	
+}
+
+
+
+.bluebox
+{
+
+	background-color:57acc1 ;
+	
+}
+.padding5px
+{
+
+	padding-top:8px ;
+	padding-left:5px ;
+	padding-bottom:5px ;
+}
+
+
+.space15
+{
+
+	padding-left:15px ;
+	
+}
+
+a{
+color: white; 
+}
+
+
+h1, h2,h3 {
+    display: inline;
+}
