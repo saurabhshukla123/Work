@@ -1,0 +1,291 @@
+﻿@media screen and (max-width: 480px){
+
+
+
+.dk-selected {
+      width: 153%;
+    margin-left: -17px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+  border: 1px solid #CCCCCC;
+  border-radius: 0.4em;
+  padding: 0 1.5em 0 0.5em;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis; }
+
+.div2-gutters {
+    padding-right: 0px;
+    margin-left: -3px;
+}
+
+.mobile-view
+{
+  padding-left: 23px;
+}
+
+.contact-form
+{
+
+      margin-left: -51px;
+}
+
+
+.mobile-view-email
+{
+
+
+    margin-top: 9px;
+    margin-left: -10px;
+    padding-left: 4px;
+}
+.mobile-button-width
+{
+      width: 100%;
+}
+
+
+  .headerformat {
+
+
+  	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%),url(../images/banner3.jpg);
+
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  }
+
+#imagetext {
+    position: absolute;
+    color: white;
+    top: 54%;
+    left: -3%;
+    font-size: 57px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+#imagetext-contactus {
+    position: absolute;
+    color: white;
+    top: 54%;
+    left: 24%;
+    font-size: 57px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  
+  
+  
+.button-radius {
+    position: absolute;
+    border-radius: 7px;
+    height: 42px;
+    width: 145px;
+    color: 00acc1;
+    top: 434px;
+    left: 55%;}
+
+.headerformat-home {
+
+
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%),url(../images/banner-img.jpg);
+
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  }
+
+
+
+
+  .bluebold36px{
+
+    font-size:29px; 
+  }
+.div1-gutters1 {
+    margin-right: -17px;
+    margin-left: -18px;
+}
+
+
+.blueback-style
+{
+text-align: center; padding: 8px; padding-left: 6px;
+margin-right: 12px;
+}
+
+
+.pinkbg-style
+{
+
+   margin-right: 0;
+    text-align: center;
+    padding: 8px;
+    margin-left: 12px;
+}
+ 
+
+
+
+.gutter-fr-duration {
+    padding-top: 5px;
+    margin-left: 16px;
+}
+.gutter-fr-clock {
+    padding-top: 5px;
+    margin-left: 45px;
+}
+.gutter-fr-cost
+{
+    padding-top: 5px;
+    margin-left: 37px;
+
+}
+
+.gutter-fr-74 {
+    padding-top: 5px;
+    margin-left: 36px;
+    font-size: 28px;
+}
+
+
+
+.box-cost-duration
+{
+
+  border:0px solid #ccc;
+  padding:1px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+
+.show-border{
+border-left-width: 0px;
+border-left-style: solid;
+
+border-left-color:  #ccc;
+
+}
+.gutter-fr-week {
+    padding-left: 41px;
+}
+
+
+}
+@media screen and (min-width: 768px ){
+.headerformat {
+
+
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%),url(../images/banner3.jpg);
+
+
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  }
+
+.headerformat-home {
+
+
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%),url(../images/banner-img.jpg);
+
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  }
+
+
+
+
+.div2-gutters {
+    padding-right: 0px;
+    margin-left: -35px;
+}
+
+
+
+
+.div1-gutters1 {
+    margin-right: 0px;
+    margin-left: -10px;
+}
+
+
+
+
+
+
+
+
+}
+
+@media screen and  (min-width: 992px){
+.headerformat {
+
+
+  	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%),url(../images/banner3.jpg);
+
+
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  }
+
+.headerformat-home {
+
+
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%),url(../images/banner-img.jpg);
+
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  }
+
+
+
+
+.div2-gutters {
+    padding-right: 0px;
+    margin-left: -35px;
+}
+
+
+
+
+.div1-gutters1 {
+    margin-right: 0px;
+    margin-left: -10px;
+}
+
+
+
+.contact-form
+{
+
+
+
+      margin-left: 182px;}
+
+
+}
+
+
+
+
+
