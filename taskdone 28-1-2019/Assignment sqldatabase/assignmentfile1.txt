@@ -1,0 +1,8 @@
+
+1)Insert User details in "User" table
+
+ans=>INSERT into users(id,email,password,status,updated_at,created_at,role) VALUES(3,'xyz@gmail.com','pwdxyz','8','2019-01-02 00:00:00.000','2019-01-03 00:00:00.000','5');
+
+
+3)Search user by username using like
+ans=>SELECT * FROM `users` WHERE email LIKE '%abc%'

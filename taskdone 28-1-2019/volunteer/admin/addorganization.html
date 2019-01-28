@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>  
+			<title>Add Organization</title>
+			<meta charset="utf-8">
+			<link rel="shortcut icon" href="images/favicon.ico"/>
+			<link rel="stylesheet" type="text/css" href="css/main.css">
+			<meta charset="UTF-8">
+			<meta name="description" content="Free Web tutorials"/>
+			<meta name="keywords" content="Ghana,Medical,Volunteer,Kumasi"/>
+			<meta name="author" content="TatvaSoft"/>
+			<link rel="stylesheet"  href="../css/bootstrap.css" type="text/css" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<link rel="stylesheet"  href="../css/bootstrap.min.css" type="text/css"/>
+			<link rel="stylesheet"  href="../css/style.css" type="text/css"/><!-- 
+			<link rel="stylesheet"  href="css/jquery-ui.min.css" type="text/css"/> -->
+			<link rel="stylesheet"  href="../css/jquery-ui.css" type="text/css"/>
+			<link rel="stylesheet"  href="../css/dropkick.css" type="text/css"/>
+			<link rel="stylesheet"  href="../css/media.css" type="text/css"/>
+	</head>
+	<body>
+		<div class="wrapper admin-wrapper admin-login y-scroll">
+			<header>
+				<div class="row header-row">
+					<div class="col-lg-2 col-sm-3 col-xs-6 logo-outer">
+						<a href="index.html" title="Volunteer Overseas" class="logo"><img src="images/logo_1.png" alt=""><img class="color-logo" src="images/logo.png" alt=""></a>
+					</div>
+					<div class="col-lg-10 col-sm-9 col-xs-6 menu-wrap">
+						<nav>
+							<ul>
+								<li><a href="#" title="Organization">Organization</a></li>
+								<li><a href="#" title="Projects">Projects</a></li>
+								<li><a href="#" title="Application">Application</a></li>
+								<li><a href="#" title="FAQ">FAQ</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<a href="#" title="" class="hamburger-icon"><span></span></a>
+			</header>
+	<main style="background-color:#f8f9fa;">
+			
+		<div class="container" style="background-color:white;">
+			<form name="admin-addorganization" action="a.html" onsubmit="return validateForm()">
+			 <div class="row pt-3">
+			 	<div class="col-lg-12">
+					 <h1 class="text-muted">Add Organization</h1>
+				</div>
+			 </div>
+			 <div class="row pt-3">
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Select User</span>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Organization Name</span>
+			 	</div>
+			</div>
+			 <div class="row pt-1">
+			 	<div class="col-lg-6">
+			 		<select class="form-control" name="userselect" id="userselect">
+			 				<option>ankit.vasva@sparsh technologies</option>
+			 		</select>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<input type="text" class="form-control" name="organizationname" id="organizationname" placeholder="Organization Name"> 
+			 	</div>
+			</div>
+
+			 <div class="row">
+			 	<div class="col-lg-6">
+			 		<lable class="pink" id="userselect-error" value=""></lable>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<lable class="pink" id="organization-name-error" value=""></lable>
+			 	</div>
+			</div>
+			 <div class="row pt-3">
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Organization Website</span>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Organization Email</span>
+			 	</div>
+			</div>
+			 <div class="row pt-1">
+			 	<div class="col-lg-6">
+			 		<input type="text" class="form-control" name="website" id="website" placeholder="Enter Website"> 
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<input type="text" class="form-control" name="Organizationemail" id="organizationemail" placeholder="Enter Email"> 
+			 	</div>
+			</div>
+
+			 <div class="row">
+			 	<div class="col-lg-6">
+			 		<lable class="pink" id="website-error" value=""></lable>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<lable class="pink" id="organization-email-error" value=""></lable>
+			 	</div>
+			</div>
+			 <div class="row pt-3">
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Contact Name</span>
+			 	</div>
+			 	<div class="col-lg-6">
+			 	</div>
+			</div> 
+			<div class="row pt-1">
+			 	<div class="col-lg-6">
+			 		<input type="text" class="form-control" name="contactname" id="contactname" placeholder="Enter Contact Name"> 
+			 	</div>
+			 	<div class="col-lg-6">
+			 		
+			 	</div>
+			</div>
+			 <div class="row">
+			 	<div class="col-lg-6">
+			 		<lable class="pink" id="contactno-error" value=""></lable>
+			 	</div>
+			</div>
+			 <div class="row pt-3">
+			 	<div class="col-lg-12">
+			 		<span class="blue font-14px">Organization Description</span>
+			 	</div>
+			</div> 
+			<div class="row pt-1">
+			 	<div class="col-lg-12">
+			 		<textarea cols="20" class="form-control" id="description"></textarea>
+			 	</div>
+			 	
+			</div>
+			 <div class="row">
+			 	<div class="col-lg-12">
+			 		<lable class="pink" id="description-error" value=""></lable>
+			 	</div>
+			</div>
+			 <div class="row pt-3">
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Organization Image</span>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Organization Video</span>
+			 	</div>
+			</div>
+			 <div class="row pt-1">
+			 	<div class="col-lg-6">
+			 		<input type="file" class="form-control" name="organizationimage" id="organizationimage"> 
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<input type="file" class="form-control" name="organizationvideo" id="organizationvideo"> 
+			 	</div>
+			</div>
+			 <div class="row">
+			 	<div class="col-lg-6">
+			 		<lable class="pink" id="org-img-error" value=""></lable>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<lable class="pink" id="org-video-error" value=""></lable>
+			 	</div>
+			</div>
+
+			 <div class="row pt-3">
+			 	<div class="col-lg-12 row justify-content-center">
+				 		<div class="row">
+				 			<div class="col-lg-12">
+				            <input type="submit" class="btn pinkbg text-light bg-danger height-31px" value="SUBMIT" name="submit" width="10px">
+
+				            <button class="btn  text-light pinkbg height-31px" name="cancel" value="CANCEL">CANCEL</button>
+				 	    	</div>
+				 	    </div>
+			 	</div>
+			</div>
+
+
+
+
+</form>
+		</div>
+	</main>
+</div>
+
+		</div>
+
+
+
+
+        <script src="../js/jquery-3.3.1.min.js" ></script>
+		<script src="../js/bootstrap.js" > </script>
+		<script src="../js/bootstrap.min.js" ></script>
+		<script src="../js/dropkick.js" > </script>
+		<script src="../js/jquery-ui.js" > </script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+		<script type="text/javascript" src="../js/admin-addorganization.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.search-btn-outer .search-btn').click(function(){
+					window.location.href = 'search-result.html';
+					return false;
+				});
+
+			});
+		</script>
+		<script language="javascript">
+					
+						function pasuser(form) {
+						if (form.username.value=="saurabh") { 
+						if (form.password.value=="tatva123") {              
+						// location=".. /index.html" 
+						 alert("welcome "+form.username.value)
+						} else {
+						alert("Invalid Password")
+						}
+						} else {  alert("Invalid UserID or Password")
+						}
+						}	
+						
+</script>
+	</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Volunteer Overseas</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<body>
+		<div class="wrapper admin-wrapper ">
+			<header>
+				<div class="row header-row">
+					<div class="col-lg-2 col-sm-3 col-xs-6 logo-outer">
+						<a href="index.html" title="Volunteer Overseas" class="logo"><img src="images/logo_1.png" alt=""><img class="color-logo" src="images/logo.png" alt=""></a>
+					</div>
+					<div class="col-lg-10 col-sm-9 col-xs-6 menu-wrap">
+						<nav>
+							<ul>
+								<li><a href="#" title="Organization">Organization</a></li>
+								<li><a href="#" title="Projects">Projects</a></li>
+								<li><a href="#" title="Application">Application</a></li>
+								<li><a href="#" title="FAQ">FAQ</a></li>
+							</ul>
+						</nav>
+						<div class="right-block">
+							<a href="login.html" class="btn" title="Login">Logout</a>
+						</div>
+					</div>
+				</div>
+				<a href="#" title="" class="hamburger-icon"><span></span></a>
+			</header>
+			<main>
+				<section class="admin-section">
+					<div class="container">
+						<div class="with-box-shadow ">
+							<div class="section-title text-center">
+								<h1>Form Elements</h1>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label>Textbox</label>
+										<input id="tags" type="text" placeholder="Search Country" class="form-control onFocus ui-autocomplete-input" autocomplete="off" data-placeholder="Search Country">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label>Drop down</label>
+										<select class="custom-dropdown">
+											<option>Animal conversation</option>
+											<option>Animal conversation</option>
+											<option>Animal conversation</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label>Textbox with icon</label>
+										<input type="text" class="form-control date" placeholder="mm/dd/yy">
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label>Check box</label>
+										<ul class="checkbox-listing clearfix">
+											<li>
+												<input type="checkbox" id="volunteer" checked="">
+												<label for="volunteer">Volunteer</label>
+											</li>
+											<li>
+												<input type="checkbox" id="teach">
+												<label for="teach">Teach</label>
+											</li>
+											<li>
+												<input type="checkbox" id="intern">
+												<label for="intern">Intern</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="form-group">
+										<label>Radio btton</label>
+										<ul class="radio-listing clearfix">
+											<li>
+												<input type="radio" id="volunteer1" checked="" name="radio">
+												<label for="volunteer1">Volunteer</label>
+											</li>
+											<li>
+												<input type="radio" id="teach1" name="radio">
+												<label for="teach1">Teach</label>
+											</li>
+											<li>
+												<input type="radio" id="intern1" name="radio">
+												<label for="intern1">Intern</label>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<div class="form-group">
+										<label>Textarea</label>
+										<textarea class="form-control" placeholder="Textarea"></textarea>
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<div class="form-group">
+										<div class="button-outer text-center">
+											<button type="button" class="btn btn-fill btn-large">Form Button</button>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+		$('.search-btn-outer .search-btn').click(function() {
+		window.location.href = 'search-result.html';
+		return false;
+		});
+		});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Volunteer Overseas</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="shortcut icon" href="images/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<body>
+		<div class="wrapper admin-wrapper admin-login">
+			<header>
+				<div class="row header-row">
+					<div class="col-lg-2 col-sm-3 col-xs-6 logo-outer">
+						<a href="index.html" title="Volunteer Overseas" class="logo"><img src="images/logo_1.png" alt=""><img class="color-logo" src="images/logo.png" alt=""></a>
+					</div>
+					<div class="col-lg-10 col-sm-9 col-xs-6 menu-wrap">
+						<nav>
+							<ul>
+								<li><a href="#" title="Organization">Organization</a></li>
+								<li><a href="#" title="Projects">Projects</a></li>
+								<li><a href="#" title="Application">Application</a></li>
+								<li><a href="#" title="FAQ">FAQ</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<a href="#" title="" class="hamburger-icon"><span></span></a>
+			</header>
+			<section class="login_wrapper " style="background: url(images/banner-img.jpg);">
+				<div class="login_outer">
+					<h1>Welcome to Volunteer Overseas</h1>
+					<form>
+						<div class="form-group">
+							<label>Username</label>
+							<input  type="text" name="username" placeholder="Username" class="form-control" required>
+						</div>
+						
+						<div class="form-group">
+							<label>Password</label>
+							<input  type="text" name="password" placeholder="Password" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<a href="#" class="forgot_link" title="Forgot password?">Forgot password?</a>
+						</div>
+						<div class="button-outer text-center">
+							<button type="submit" class="btn btn-fill btn-large" onClick="pasuser(this.form)">Sign In</button>
+						</div>
+					</form>
+				</div>
+			</section>
+		</div>
+		
+		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.search-btn-outer .search-btn').click(function(){
+					window.location.href = 'search-result.html';
+					return false;
+				});
+
+			});
+		</script>
+		<script language="javascript">
+					
+						function pasuser(form) {
+						if (form.username.value=="saurabh") { 
+						if (form.password.value=="tatva123") {              
+						// location=".. /index.html" 
+						 alert("welcome "+form.username.value)
+						} else {
+						alert("Invalid Password")
+						}
+						} else {  alert("Invalid UserID or Password")
+						}
+						}	
+						
+</script>
+	</body>
+</html>

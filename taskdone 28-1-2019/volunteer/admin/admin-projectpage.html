@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>  
+			<title>Add Organization</title>
+			<meta charset="utf-8">
+			<link rel="shortcut icon" href="images/favicon.ico"/>
+			<link rel="stylesheet" type="text/css" href="css/main.css">
+			<meta charset="UTF-8">
+			<meta name="description" content="Free Web tutorials"/>
+			<meta name="keywords" content="Ghana,Medical,Volunteer,Kumasi"/>
+			<meta name="author" content="TatvaSoft"/>
+			<link rel="stylesheet"  href="../css/bootstrap.css" type="text/css" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<link rel="stylesheet"  href="../css/bootstrap.min.css" type="text/css"/>
+			<link rel="stylesheet"  href="../css/style.css" type="text/css"/><!-- 
+			<link rel="stylesheet"  href="css/jquery-ui.min.css" type="text/css"/> -->
+			<link rel="stylesheet"  href="../css/jquery-ui.css" type="text/css"/>
+			<link rel="stylesheet"  href="../css/dropkick.css" type="text/css"/>
+			<link rel="stylesheet"  href="../css/media.css" type="text/css"/>
+	</head>
+	<body>
+		<div class="wrapper admin-wrapper admin-login y-scroll">
+			<header>
+				<div class="row header-row">
+					<div class="col-lg-2 col-sm-3 col-xs-6 logo-outer">
+						<a href="index.html" title="Volunteer Overseas" class="logo"><img src="images/logo_1.png" alt=""><img class="color-logo" src="images/logo.png" alt=""></a>
+					</div>
+					<div class="col-lg-10 col-sm-9 col-xs-6 menu-wrap">
+						<nav>
+							<ul>
+								<li><a href="#" title="Organization">Organization</a></li>
+								<li><a href="#" title="Projects">Projects</a></li>
+								<li><a href="#" title="Application">Application</a></li>
+								<li><a href="#" title="FAQ">FAQ</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<a href="#" title="" class="hamburger-icon"><span></span></a>
+			</header>
+	<main style="background-color:#f8f9fa;">
+			
+		<div class="container" style="background-color:white;">
+			<form name="projectpage" action="a.html" onsubmit="return validateForm()">
+			 <div class="row pt-3">
+			 	<div class="col-lg-12">
+					 <h1 class="blue">Project Details</h1>
+				</div>
+			 </div>
+			 <div class="row pt-3">
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Organization</span>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Category</span>
+			 	</div>
+			</div>
+			 <div class="row pt-1">
+			 	<div class="col-lg-6">
+			 		<select class="form-control" name="organization" id="organization">
+			 				<option value="0">please select</option>
+			 				<option>POP Wuj- spansh</option>
+			 		</select>
+			 	</div>
+			 	<div class="col-lg-6">
+			 	
+			 		<select class="form-control" name="category" id="category">
+			 				<option value="0">please select</option>
+			 				<option value="1">Volunteer Abroad</option>
+			 				<option value="2">Volunteer Abroad</option>
+			 		</select>
+			 	</div>
+			</div>
+
+			 <div class="row">
+			 	<div class="col-lg-6">
+			 		
+			 		<label class="pink" id="organization-error" value=""></label>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<label class="pink" id="category-error" value=""></label>
+			 	</div>
+			</div>
+			 <div class="row pt-3">
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Activity</span>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Title</span>
+			 	</div>
+			</div>
+			 <div class="row pt-1">
+			 	<div class="col-lg-6">
+			 			<select class="form-control" name="activity" id="activity">
+			 				<option value="0">please select</option>
+			 				<option value="1">Human Rights</option>
+			 				</select>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<input type="text" class="form-control" name="title" id="title"> 
+			 	</div>
+			</div>
+
+			 <div class="row">
+			 	<div class="col-lg-6">
+			 		<label class="pink" id="activity-error" value=""></label>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<label class="pink" id="title-error" value=""></label>
+			 	</div>
+			</div>
+			 <div class="row pt-3">
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Minimum age</span>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Maximum age</span>
+			 	</div>
+			</div> 
+			<div class="row pt-1">
+			 	<div class="col-lg-6">
+			 		<input type="text" class="form-control" name="min-age" id="min-age" placeholder="min-age" autocomplete="off"> 
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<input type="text" class="form-control" name="max-age" id="max-age" placeholder="max-age" autocomplete="off"> 
+			 		
+			 	</div>
+			</div>
+			 <div class="row">
+			 	<div class="col-lg-6">
+			 		<label class="pink" id="min-age-error" value=""></label>
+			 	</div>
+
+			 	<div class="col-lg-6">
+			 		<label class="pink" id="max-age-error" value=""></label>
+			 	</div>
+			</div>
+			<div class="row pt-3">
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">City</span>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<span class="blue font-14px">Country</span>
+			 	</div>
+			</div>
+			 <div class="row pt-1">
+			 	<div class="col-lg-6">
+			 		<select class="form-control" name="city" id="city">
+			 				<option value="0">please select</option>
+			 				<option>Ahmedabad</option>
+			 		</select>
+			 	</div>
+			 	<div class="col-lg-6">
+			 	
+			 		<select class="form-control" name="country" id="country">
+			 				<option value="0">please select</option>
+			 				<option>India</option>
+			 		</select>
+			 	</div>
+			</div>
+
+			 <div class="row">
+			 	<div class="col-lg-6">
+			 		<label class="pink" id="city-error" value=""></label>
+			 	</div>
+			 	<div class="col-lg-6">
+			 		<label class="pink" id="country-error" value=""></label>
+			 	</div>
+			</div>
+			 <div class="row pt-3">
+			 	<div class="col-lg-12">
+			 		<span class="blue font-14px">Overview Description</span>
+			 	</div>
+			</div> 
+			<div class="row pt-1">
+			 	<div class="col-lg-12">
+			 		<textarea cols="20" class="form-control" id="description"></textarea>
+			 	</div>
+			 	
+			</div>
+			 <div class="row">
+			 	<div class="col-lg-12">
+			 		<label class="pink" id="description-error" value=""></label>
+			 	</div>
+			</div>
+			<div class="row pt-3">
+			 	<div class="col-lg-12">
+			 		<span class="blue font-14px">Accomodation Description</span>
+			 	</div>
+			</div> 
+			<div class="row pt-1">
+			 	<div class="col-lg-12">
+			 		<textarea cols="20" class="form-control" id="acc-description"></textarea>
+			 	</div>
+			 	
+			</div>
+			 <div class="row">
+			 	<div class="col-lg-12">
+			 		<label class="pink" id="acc-description-error" value=""></label>
+			 	</div>
+			</div>	
+
+			
+			
+			
+
+			 <div class="row pt-3">
+			 	<div class="col-lg-12 row justify-content-center">
+				 		<div class="row">
+				 			<div class="col-lg-12">
+				            <input type="submit" class="btn pinkbg text-light bg-danger height-31px" value="SUBMIT" name="submit" width="10px">
+
+				            <button class="btn  text-light pinkbg height-31px" name="cancel" value="CANCEL">CANCEL</button>
+				 	    	</div>
+				 	    </div>
+			 	</div>
+			</div>
+
+
+
+
+</form>
+		</div>
+	</main>
+</div>
+
+		</div>
+
+
+
+
+        <script src="../js/jquery-3.3.1.min.js" ></script>
+		<script src="../js/bootstrap.js" > </script>
+		<script src="../js/bootstrap.min.js" ></script>
+		<script src="../js/dropkick.js" > </script>
+		<script src="../js/jquery-ui.js" > </script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+		<script type="text/javascript" src="../js/projectpage.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.search-btn-outer .search-btn').click(function(){
+					window.location.href = 'search-result.html';
+					return false;
+				});
+
+			});
+		</script>
+		<script language="javascript">
+					
+						function pasuser(form) {
+						if (form.username.value=="saurabh") { 
+						if (form.password.value=="tatva123") {              
+						// location=".. /index.html" 
+						 alert("welcome "+form.username.value)
+						} else {
+						alert("Invalid Password")
+						}
+						} else {  alert("Invalid UserID or Password")
+						}
+						}	
+						
+</script>
+	</body>
+</html>
