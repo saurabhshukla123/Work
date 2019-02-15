@@ -1,0 +1,8 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+RewriteRule ^contact1  contact.php [L]
+RewriteRule ^index   homepage.php [L]
+RewriteRule ^profile   faq.php [L]
+
+
