@@ -222,8 +222,14 @@
 		         			</div>
 		         			 <div class="row">
 		         			 	<div class="col-lg-12 col-12">
-		         			 		<label >1week - 10Weeks</label>
-		         			 	<input type="range" name="" class="" style="width:100%;">
+		         			 			 <input type="text" id="amounttablet" readonly style="border:0;padding-bottom: 7px;">
+							
+		         			 	
+		         			  <!-- 	<label for="amount">Price range:</label> -->
+							 
+
+							<div id="slider-rangetablet" style="color:black"></div>
+
 
 		         			   </div>
 		         			</div>
@@ -353,8 +359,16 @@
 		         			</div>
 		         			 <div class="row">
 		         			 	<div class="col-lg-12 col-12">
-		         			 		<label >1week - 10Weeks</label>
-		         			 	<input type="range" name="" class="" style="width:100%;">
+		         			 		 <input type="text" id="amounttablet" readonly style="border:0;padding-bottom: 7px;">
+							
+		         			 	
+		         			  <!-- 	<label for="amount">Price range:</label> -->
+							 
+
+							<div id="slider-rangetablet" style="color:black"></div>
+
+
+		         			   </div>
 		         			   </div>
 		         			</div>
 
@@ -396,7 +410,7 @@
 		 <!--Tablet View end -->
 
 
-
+<div class="container">
 
 				<!-- Panel for mobile View-->
 
@@ -431,7 +445,7 @@
 		         <div class="row">
 		         	<div class="col-lg-12 pt-1">
 		         		<div class="row"> <div class="col-12 text-center" style="height:20px;">
-             		  <label class="display-close-none">&#10006;</label>	
+             		  <label class="display-close-none" >&#10006;</label>	
              		  </div>
 
 		         		<div class="col-lg-4 border-right padding-top-mobile">
@@ -510,9 +524,15 @@
 		         			</div>
 		         			 <div class="row">
 		         			 	<div class="col-lg-12 col-12">
-		         			 		<label >1week - 10Weeks</label>
-		         			 	<div id="slider-range"><input type="range" name="" class="" style="width:100%;">
-		         			 	</div>
+		         			 		 <input type="text" id="amount" readonly style="border:0;padding-bottom: 7px;">
+							
+		         			 	
+		         			  <!-- 	<label for="amount">Price range:</label> -->
+							 
+
+							<div id="slider-range" style="color:black"></div>
+
+
 		         			   </div>
 		         			</div>
 
@@ -545,6 +565,7 @@
 		     	<!-- </div> -->
 		     </div>
 		 </div>
+
 
 
 
@@ -1124,7 +1145,7 @@
 
 
 
-<div class="paging text-center justify-content-center padding-none  pt-3" style="padding-left:350px;font-size: 16px;" >
+<div class="paging text-center justify-content-center  tablet-pagination mobile-pagination pt-3" style="padding-left:465px;font-size: 16px;" >
        <nav aria-label="..." class="text-center">
   <ul class="pagination">
    
@@ -1145,7 +1166,7 @@
 
    </div>
 
-
+</div>
 
 <footer class="bg-dark text-light">
 
@@ -1254,6 +1275,36 @@ $(window).scroll(function() {
     } 
     });  
         </script>
+         <script>
+  $( function() {
+    $( "#slider-range" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val(  ui.values[ 0 ] +" Week" + " -" + ui.values[ 1 ] +" Week" );
+      }
+    });
+    $( "#amount" ).val(  + $( "#slider-range" ).slider( "values", 0 ) +
+      "  week"+"-"  + $( "#slider-range" ).slider( "values", 1 )+"week"  );
+
+    $( "#slider-rangetablet" ).slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [ 75, 300 ],
+      slide: function( event, ui ) {
+        $( "#amounttablet" ).val(  ui.values[ 0 ] +" Week" + " -" + ui.values[ 1 ] +" Week" );
+      }
+    });
+    $( "#amounttablet" ).val(  + $( "#slider-rangetablet" ).slider( "values", 0 ) +
+      "  week"+"-"  + $( "#slider-rangetablet" ).slider( "values", 1 )+"week"  );
+
+
+  } );
+  </script>
+
 		
 	</body>
 

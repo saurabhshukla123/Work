@@ -1,0 +1,7 @@
+RewriteEngine On
+Options -MultiViews
+
+RewriteCond $1 !^(index\.php|assets|public|404\.php)
+RewriteRule ^(.*)$ index.php?url=$0 [L,QSA]
+
+
