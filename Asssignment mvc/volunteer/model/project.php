@@ -119,7 +119,7 @@ class projects
         "updated_at" => $c_date  
     );
     $where = "id = '$id'";
-    $update_faq=$update->updateData($table, $data, $where,$sequencenumber);
+    $update_faq=$update->updateData($table, $data, $where);
     return $update_faq;
 
    }

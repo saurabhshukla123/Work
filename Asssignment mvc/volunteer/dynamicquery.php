@@ -37,9 +37,20 @@ class query extends config
     public function insert($table, array $data, array $columns)
     {
 
-        $data = $this->setdata($data);
+        $getarr = array();  
+        foreach($data AS $val) {
+        $getarr[] =strip_tags(mysqli_real_escape_string($this->conn, $val));
+        }
+        //print_r(pre);
+        //print_r($getarr);
+       $data = $this->setdata($getarr);
+       /// $data= strip_tags($data);
+        
+
+        //data = $this->setdata($data);
         $cols = $this->setColumns($columns);
         $quer = "INSERT INTO $table ($cols) VALUES ('$data')";
+     
         $stmt = $this->conn->query($quer);
 
         return $stmt;
@@ -47,11 +58,37 @@ class query extends config
     //update data query
     public function updateData($table, $data, $where)
     {
+        //       $getarr = array();  
+        // foreach($data AS $val) {
+        // $getarr[] =strip_tags(mysqli_real_escape_string($this->conn, $val));
+        // }
+        // $data=$getarr;
+
         $cols = array();
         foreach ($data as $key => $val) {
-            $cols[] = "$key = '$val'";
+           
+            $cols[$key] =strip_tags(mysqli_real_escape_string($this->conn, $val));
+
         }
-        $query = "UPDATE $table SET " . implode(', ', $cols) . " WHERE $where";
+
+        // print_r($cols);
+        // die();
+
+        $value = array();
+        foreach ($cols as $key => $val) {
+            $value[] = "$key = '$val'";
+        }
+
+       //  print_r($value);
+       // die();
+
+        // $cols = array();
+        // foreach ($data as $key => $val) {
+        //     $cols[] = "$key = '$val'";
+        // }
+        $query = "UPDATE $table SET " . implode(', ', $value) . " WHERE $where";
+       // print_r($query);
+       // die();
         $result = mysqli_query($this->conn, $query);
         return  $this->conn;
     }

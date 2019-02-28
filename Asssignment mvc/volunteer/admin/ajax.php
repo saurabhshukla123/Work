@@ -9,7 +9,7 @@
     $country_id = $_POST['country_id'];
     $sql = "SELECT id AS city_id,name as city_name,country_id as city_country_id FROM cities where country_id='$country_id'" ;
     $result = $conn->query($sql);
-    $result_row = [];
+  //  $result_row = [];
     $response = '';
     $flag="";
     while($row = $result->fetch_assoc()) {
