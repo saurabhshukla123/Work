@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand-sm">
+			<!-- Links -->
+			<img src="<?php echo IMAGES;?>logo_1.png" class="inline nav-brand">
+			<ul class="navbar-nav ml-auto pt-5 ">
+				<li class="nav-item">
+					<a class="nav-link text-light" href="Faq">FAQ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-light" href="Contact">CONTACT US</a>
+				</li>
+			</ul>
+		</nav>
