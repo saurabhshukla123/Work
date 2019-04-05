@@ -19,6 +19,32 @@ if (!empty($error->invalid_userandpwd)) {
     $error_invalid = $error->invalid_userandpwd;
 
 }
+
+
+// if(isset($_SESSION["status"]))
+// {
+//   if($_SESSION["status"]=="wrongtoken")
+//   {
+//       $_SESSION["status"]="";
+//       echo "<script> alert('Sorry Link Expired');</script>";
+//   }
+//   if($_SESSION["status"]=="updated")
+//   {
+//       $_SESSION["status"]="";
+//       echo "<script> alert('Password Updated SucessFully');</script>";
+//   }
+//   if($_SESSION["status"]=="timeover")
+//   {
+//       $_SESSION["status"]="";
+//       echo "<script> alert('Link expired kindly generate new one');</script>";
+//   }
+  
+
+// }
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +64,32 @@ if (!empty($error->invalid_userandpwd)) {
 
 			<section class="login_wrapper " style="background: url(<?php echo ASSETS_URL; ?>images/banner-img.jpg);">
 				<div class="login_outer">
-			
+				 <!-- code start for alert -->
+				 <?php if($_SESSION["status"]=="wrongtoken"){ 
+                                $_SESSION["status"]="";
+                                ?>
+                                <div class="alert alert-danger update_success" role="alert" >
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                Sorry Link Expired
+                            </div>
+                            <?php }?>
+                            <?php if($_SESSION["status"]=="timeover"){
+                                $_SESSION["status"]="";
+                                ?>
+                                <div class="alert alert-info update_success" role="alert" >
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                Link expired kindly generate new one
+                            </div>
+                            <?php }?>
+                            <?php if($_SESSION["status"]=="updated"){
+                                $_SESSION["status"]="";
+                                ?>
+                                <div class="alert alert-sucess update_success" role="alert" >
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>
+								Password Updated SucessFully
+                            </div>
+                            <?php }?>
+                        <!-- code ends for alert -->
 					<h1>Welcome to Volunteer Overseas</h1>
 					<span id="invalid_error" style="color:red;" ></span>
 					<form method="post">
@@ -55,7 +106,7 @@ if (!empty($error->invalid_userandpwd)) {
 							<span id="pwd-error" class="bg-danger"   style="color:red;" value=""><?php echo $error_pwd; ?></span>
 						</div>
 						<div class="form-group">
-							<a href="#" class="forgot_link" title="Forgot password?">Forgot password?</a>
+							<a href="ForgotPassword" class="forgot_link" title="Forgot password?">Forgot password?</a>
 						</div>
 						<div class="text-center">
 							<div id="loading" style="display:none;  background: url('<?php echo IMAGES; ?>/loading.gif') 50% 50% no-repeat rgb(249,249,249);">
@@ -74,17 +125,7 @@ if (!empty($error->invalid_userandpwd)) {
 
 		<script type="text/javascript" src="<?php echo ADMIN_ASSETS_URL; ?>js/main.js"></script>
 		<script type="text/javascript" src="<?php echo ASSETS_URL; ?>js/login.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$('.search-btn-outer .search-btn').click(function(){
-					window.location.href = 'search-result.html';
-					return false;
-				});
-
-			});
-		
-		</script>
-
+		<script type="text/javascript" src="<?php echo ASSETS_URL;?>js/commonalert.js"></script>
 	</body>
 
 </html>

@@ -140,7 +140,7 @@ $_SESSION["page"]="home";
 				<?php if(!empty($indexPageData->trendingprojects)){
 				foreach($indexPageData->trendingprojects as $row){?>			
 					<div class="item">					
-					<a  href="projectdetail?id=<?php  echo $row->id; ?>">
+					<a  href="projectdetail?id=<?php  echo $row->id; ?>" style="overflow:hidden;">
 						<div style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0)0%, rgba(0, 0, 0, 0.06) 10%, rgba(0, 0, 0, 0.15) 22%,rgba(0, 0, 0, 0.72) 75%, rgba(0, 0, 0, 0.84) 89%, rgba(0, 0, 0, 0.91) 100%),url('<?php echo UPLOAD_IMAGE_URL; echo $row->image;?>'); background-repeat: no-repeat; height:320px; background-size:cover;">
 						</div>
 						</a>

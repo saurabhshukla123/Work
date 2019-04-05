@@ -34,6 +34,7 @@ if (!empty($projectPageData->project_details)) {
 if (!empty($projectPageData->project_view)) {
 	$total_views=$projectPageData->project_view;
 	}
+$datearray=array();
 
 ?>
 <!DOCTYPE html>
@@ -92,7 +93,8 @@ if (!empty($projectPageData->project_view)) {
 			</a>
 		</header>
 	</div>
-
+	<div id="loading" style="display:none;  background: url('<?php echo IMAGES; ?>/loading.gif') 50% 50% no-repeat rgb(249,249,249);">
+	</div>
 	<div class="container pt-3 margin-top-index">
 		<div class="row">
 			<div class="col-lg-8 col-md  col-sm-12">
@@ -108,7 +110,7 @@ if (!empty($projectPageData->project_view)) {
 								<img src="<?php echo IMAGES; ?>map.png " class="pl-4" height="26px" alt="Kumasi Gana" title="Khumasi Gana" style="padding-top: 5px;padding-left: 7px;">
 							</div>
 							<div class="col-md-2 col-10">
-								<h3 class="pink inline"> <?php echo $cityname; ?>,<?php echo $countryname; ?></h3>
+								<h3 class="pink inline"> <?php echo $cityname; ?>, <?php echo $countryname; ?></h3>
 							</div>
 						</div>
 					</div>
@@ -417,8 +419,10 @@ if (!empty($projectPageData->project_view)) {
 													
 												   $day=date('l', strtotime($value->start_date));
 												   $date=date('d', strtotime($value->start_date));
+												   $fulldate=$value->start_date;
 													if($month==$monthnew)
 													{
+														$datearray[]= $fulldate;
 											       ?>
 													<td><span class="pink font-weight-bold font-sizexl"><?php echo $date;?></span><span class="blue "><?php  echo $day?></span></td>
 
@@ -496,7 +500,7 @@ if (!empty($projectPageData->project_view)) {
 									<img src="<?php echo IMAGES; ?>icon3.png" alt="date" title="date">
 								</div>
 							</div>
-							<input type="text" placeholder="mm/dd/yyyy" class="form-control" id="datepicker">
+							<input type="text" placeholder="mm/dd/yyyy" class="form-control" id="datepicker" readonly="true"> 
 						</div>
 						<ul class="padding-left-0px">
 							<li id="date-picker-error" class="pink" val=""></li>
@@ -557,6 +561,59 @@ if (!empty($projectPageData->project_view)) {
 	<script src="public/js/jquery-ui.js"> </script>
 	<script src="public/js/index-popup.js"></script>
 	<script type="text/javascript" src="public/js/indexpagejs.js"></script>
+	<script type="text/javascript">
+	$( "#normal_select" ).change(function() {
+	var value=$( "#normal_select option:selected" ).text();
+
+	$('.dk-option').each(function (i) {
+
+		if($(this).text()==value)
+		{
+			// $( "#normal_select1 option:selected" ).text(value);
+		//	$('#normal_select1').val(value).attr("dk1-normal_select1", "dk1-normal_select1");
+			//alert($(this).text());
+			// $("#selectduration").find(value).attr("selected", "selected");
+			$(this).attr("class", "dk-option  dk-option-selected");
+			$(this).attr("aria-selected", "true");
+			
+		//	$('#normal_select1').dropkick('reload');
+			// $("select[name='selectduration']").val(value);
+			// $('select[name^="normal_select1"] option[value=".$(this).text().'"]').attr("selected","selected");
+		}
+
+	});
+
+});
+
+$( document ).ready(function() {
+	var arr = [];
+	var datesToBeDisabled = <?php echo json_encode($datearray); ?>;
+	jQuery.each(datesToBeDisabled, function(i, val) {
+	  arr.push(val.toString());
+    });
+			$("#datepicker,#datepicker3").datepicker({
+				dateFormat: 'yy/mm/dd',
+			//   changeMonth: true,
+			//   changeYear: true,
+			//   minDate : 0,
+			  todayHighlight: 1,
+			  beforeShowDay: function (date) {
+					  var dateStr = jQuery.datepicker.formatDate('yy-mm-dd', date);
+					  	if(arr.indexOf(dateStr) >= 0){
+							return [true];
+						  }else{
+							return [false];
+						  }
+				
+					
+			  },
+	
+			});
+
+});
+
+
+	</script>
 
 	<!--MOdal open for image-->
 
@@ -642,8 +699,8 @@ if (!empty($projectPageData->project_view)) {
 									<div class="input-group-text">
 										<img src="<?php echo IMAGES; ?>icon3.png" alt="date" title="date">
 									</div>
-								</div>
-								<input type="text" placeholder="YYYY/MM/DD" class="form-control" id="datepicker3" name="datepicker3"
+								</div> 
+								<input type="text" placeholder="YYYY/MM/DD" class="form-control" id="datepicker3" readonly="true" name="datepicker3"
 								 autocomplete="off">
 							</div>
 							<ul class="padding-left-0px">
@@ -687,6 +744,7 @@ if (!empty($projectPageData->project_view)) {
 					</form>
 				</div>
 			</div>
-		</div>
+		</div>		
+		
 </body>
 </html>

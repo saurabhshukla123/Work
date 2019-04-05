@@ -21,34 +21,6 @@ if (!empty($activitiesPageData->total_result)) {
  
 	$_SESSION['totalrecords'] = $total_records;
 }
-
-
-
-
-if(isset($_SESSION["status"]))
-{
-  if($_SESSION["status"]=="added")
-  {
-      $_SESSION["status"]="";
-      echo "<script> alert('Activity added sucessfully');</script>";
-  }
-  else if($_SESSION["status"]=="updated")
-  {
-      $_SESSION["status"]="";
-      echo "<script> alert('Activity updated sucessfully');</script>";
-  }
-  else if($_SESSION["status"]=="deleted")
-  {
-      $_SESSION["status"]="";
-      echo "<script> alert('Activity deleted sucessfully');</script>";
-  }
-  else
-  {
-      $_SESSION["status"]="";
-  }
-
-}
- 
  ?>   
 <!DOCTYPE html>
 <html lang="en">
@@ -64,12 +36,40 @@ if(isset($_SESSION["status"]))
    
         <div class="wrapper admin-wrapper  small-header">
         <?php  include 'header-admin.php'; ?> 
+            <div id="loading" style="display:none;  background: url('<?php echo IMAGES; ?>/loading.gif') 50% 50% no-repeat rgb(249,249,249);">
+            </div>
         <div class="" id="ajax">
             <main>
                 <section class="admin-section">
                     <div class="container">
                         <div class="with-box-shadow ">
-                            <div class="section-title text-center">
+                        <!-- code start for alert -->
+                            <?php if($_SESSION["status"]=="updated"){ 
+                                $_SESSION["status"]="";
+                                ?>
+                                <div class="alert alert-success update_success" role="alert" >
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                Activity updated sucessfully
+                            </div>
+                            <?php }?>
+                            <?php if($_SESSION["status"]=="added"){
+                                $_SESSION["status"]="";
+                                ?>
+                                <div class="alert alert-success update_success" role="alert" >
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                Activity added sucessfully
+                            </div>
+                            <?php }?>
+                            <?php if($_SESSION["status"]=="deleted"){
+                                $_SESSION["status"]="";
+                                ?>
+                                <div class="alert alert-success update_success" role="alert" >
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                Activity deleted sucessfully
+                            </div>
+                            <?php }?>
+                        <!-- code ends for alert -->
+                        <div class="section-title text-center">
                                 <h5>ACTIVITY Lists</h5>
                                 <div class="button-outer">
                                 <a href="ActivityLists/edit/2/2">  <button type="button" class="btn btn-fill">Add Activity</button></a>
@@ -121,7 +121,7 @@ if(isset($_SESSION["status"]))
                                                 </div> 
                                         </td>
                                         <td>
-                                        <a onclick="deletecountry('<?php echo $row->id; ?>')" href="javascript:void(0);" >  <button type="button" class="btn btn-fill" value="" id="delete">Delete </button></a>
+                                        <a onclick="deleteActivity('<?php echo $row->id; ?>')" href="javascript:void(0);" >  <button type="button" class="btn btn-fill" value="" id="delete">Delete </button></a>
                                       </td>
                                        
                                     </tr>
@@ -140,16 +140,16 @@ if(isset($_SESSION["status"]))
                         </form>
                         <div class="paging text-center justify-content-center  tablet-pagination mobile-pagination pt-3" style="font-size: 16px;">
 
-<nav aria-label="..." class="text-center" style="align-items:center;">
-        <ul class="pagination" >
-        <?php
-$pageLink = $page->setpagination($total_records);
-echo $pageLink;
-?>
-        </ul>
-    </nav>
-    </div>
-                        </div>
+                        <nav aria-label="..." class="text-center" style="align-items:center;">
+                                <ul class="pagination" >
+                                <?php
+                                    $pageLink = $page->setpagination($total_records);
+                                    echo $pageLink;
+                                    ?>
+                                </ul>
+                            </nav>
+                            </div>
+                          </div>
                     </div>
                 </section>
                 
@@ -158,44 +158,8 @@ echo $pageLink;
             </div>
         </div>
         <script type="text/javascript" src="<?php echo ADMIN_ASSETS_URL;?>js/main.js"></script>
-        <script>
-            function deletecountry(id){
-                if(confirm("Are you sure you want to delete this Activity?")){
-                    window.location.href = 'ActivityLists/edit/3/'+id;
-                }
-            }
-        </script>
-        <script>
-	$(document).on('click', '.page-link', function(){  
-           var page = $(this).attr("id");  
-		  
-           sort1(page);  
-      });
-
-
-function sort1(page)
-{
-	var data1 = 'page='+page; 
-   var siteurl='<?php echo $siteurl=SITE_URL; ?>';
-  var url1= siteurl + 'ActivityLists/ajaxData';
- 
-	$.ajax({
-
-    url :url1 ,
-    type : 'POST',  
-    data : data1,
-    success : function(data) {
-	 
-	  $('#ajax').html(data);
-	
-    },
-
-    });
-
-}
-
-
-
-</script>
+        <script type="text/javascript" src="<?php echo ASSETS_URL;?>js/commonalert.js"></script>
+        <script type="text/javascript" src="<?php echo ASSETS_URL;?>js/config.js"></script>
+        <script type="text/javascript" src="<?php echo ASSETS_URL;?>js/activityList.js"></script>
     </body>
 </html>

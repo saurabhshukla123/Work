@@ -18,8 +18,11 @@ $.ajax({
 url :url1 ,
 type : 'POST',  
 data : data1,
+beforeSend: function() {
+    $('#loading').show();
+},
 success : function(data) {
-
+    $('#loading').hide();
 $('#ajax1').html(data);
 
 },

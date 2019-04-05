@@ -1,6 +1,5 @@
 <?php
 
-// require_once($_SERVER['DOCUMENT_ROOT']."/volunteer/dynamicquery.php");
 class UserModel extends BaseModel
 {
 
@@ -9,7 +8,18 @@ class UserModel extends BaseModel
         $user1 = new BaseModel();
         $data = array();
         $data['table'] = "users";
-        $data['columns'] = "id,name,password,role,status,created_at,updated_at ";
+        $data['columns'] = "id,email,password,role,status,created_at,updated_at,tokenNumber,tokenDate ";
+        $result = $user1->select($data);
+        return $result;
+        
+    }
+    function getdetails($id)
+    {
+        $user1 = new BaseModel();
+        $data = array();
+        $data['table'] = "users";
+        $data['columns'] = "id,email,password,role,status,created_at,updated_at,tokenNumber,tokenDate ";
+        $data['WHERE']=" email='$id' ";
         $result = $user1->select($data);
         return $result;
         
@@ -42,7 +52,47 @@ class UserModel extends BaseModel
         return $result; 
      
     }
+
     
+    public function updateTokenDetail($id, $tokenNumber,$tokenDate)
+    {
+        $update= new BaseModel();
+        $table="users";
+        $data = array(
+            "tokenNumber" => $tokenNumber,
+            "tokenDate" => $tokenDate
+            
+        );
+        $where = "email = '$id'";
+        $update_data=$update->updateData($table, $data, $where);
+        return $update_data;
+    }
+
+    function getTokenDetails($tokennumber)
+    {
+        $user1 = new BaseModel();
+        $data = array();
+        $data['table'] = "users";
+        $data['columns'] = "id,email,password,role,status,created_at,updated_at,tokenNumber,tokenDate ";
+        $data['WHERE']=" tokenNumber ='$tokennumber' ";
+        $result = $user1->select($data);
+        return $result;
+        
+    }
+
+    public function updatePassword($emailid, $password)
+    {
+        $update= new BaseModel();
+        $table="users";
+        $data = array(
+            "  `password`" => $password,
+            " `tokenNumber`" => "XXXXXXXXX",
+            " `tokenDate`" =>"2010-01-01",
+        );
+        $where = " `email` = '$emailid'";
+        $update_data=$update->updateData($table, $data, $where);
+        return $update_data;
+    }
 
 
     

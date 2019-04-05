@@ -21,29 +21,6 @@ $page = new Pagination();
 if (!empty($ProjectData->count_total)) {
     $total_records = $ProjectData->count_total;
 }
-if(isset($_SESSION["status"]))
-{
-  if($_SESSION["status"]=="added")
-  {
-      $_SESSION["status"]="";
-      echo "<script> alert('Project added sucessfully');</script>";
-  }
-  else if($_SESSION["status"]=="updated")
-  {
-      $_SESSION["status"]="";
-      echo "<script> alert('Project updated sucessfully');</script>";
-  }
-  else if($_SESSION["status"]=="deleted")
-  {
-      $_SESSION["status"]="";
-      echo "<script> alert('Project deleted sucessfully');</script>";
-  }
-  else
-  {
-      $_SESSION["status"]="";
-  }
-
-}
  ?>   
 <!DOCTYPE html>
 <html lang="en">
@@ -60,10 +37,38 @@ if(isset($_SESSION["status"]))
         <?php  include 'header-admin.php'?> 
     
             <main>
+                         <div id="loading" style="display:none;  background: url('<?php echo IMAGES; ?>/loading.gif') 50% 50% no-repeat rgb(249,249,249);">
+                        </div>
             <div id="ajax1">
                 <section class="admin-section">
-                    <div class="container">
+                    <div class="container">                       
                         <div class="with-box-shadow ">
+                        <!-- code start for alert -->
+                                <?php if($_SESSION["status"]=="updated"){ 
+                                $_SESSION["status"]="";
+                                ?>
+                                <div class="alert alert-success update_success" role="alert" >
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                Project updated sucessfully
+                            </div>
+                            <?php }?>
+                            <?php if($_SESSION["status"]=="added"){
+                                $_SESSION["status"]="";
+                                ?>
+                                <div class="alert alert-success update_success" role="alert" >
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                Project added sucessfully
+                            </div>
+                            <?php }?>
+                            <?php if($_SESSION["status"]=="deleted"){
+                                $_SESSION["status"]="";
+                                ?>
+                                <div class="alert alert-success update_success" role="alert" >
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                Project deleted sucessfully
+                            </div>
+                            <?php }?>
+                        <!-- code ends for alert -->
                             <div class="section-title text-center">
                                 <h5>Projects list</h5>
                                 <div class="button-outer">
@@ -137,5 +142,6 @@ if(isset($_SESSION["status"]))
         </div>
         <script type="text/javascript" src="<?php echo ADMIN_ASSETS_URL;?>js/main.js"></script>
         <script type="text/javascript" src="<?php echo ASSETS_URL;?>js/projectList.js"></script>
+        <script type="text/javascript" src="<?php echo ASSETS_URL;?>js/commonalert.js"></script>
     </body>
 </html>

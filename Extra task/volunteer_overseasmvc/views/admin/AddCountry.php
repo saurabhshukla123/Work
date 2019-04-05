@@ -107,11 +107,11 @@ if(!empty($CountryData->countriesdetails)){
 </div>
 
 		</div>
-        <script src="<?php echo ADMIN_ASSETS_URL;?>js/jquery-3.3.1.min.js" ></script>
-		<script src="<?php echo ADMIN_ASSETS_URL;?>js/bootstrap.js" > </script>
+        <script src="<?php echo ASSETS_URL;?>js/jquery-3.3.1.min.js" ></script>
+		<script src="<?php echo ASSETS_URL;?>js/bootstrap.js" > </script>
 		<script src="<?php echo ADMIN_ASSETS_URL;?>js/bootstrap.min.js" ></script>
-		<script src="<?php echo ADMIN_ASSETS_URL;?>js/dropkick.js" > </script>
-		<script src="<?php echo ADMIN_ASSETS_URL;?>js/jquery-ui.js" > </script>
+		<script src="<?php echo ASSETS_URL;?>js/dropkick.js" > </script>
+		<script src="<?php echo ASSETS_URL;?>js/jquery-ui.js" > </script>
 		<script type="text/javascript" src="<?php echo ADMIN_ASSETS_URL;?>js/main.js"></script>
 
 		<script type="text/javascript" src="<?php echo ASSETS_URL;?>js/admin-addorganization.js"></script>

@@ -674,7 +674,7 @@ if (!empty($searchPageData->result_project_data)) {
 							 <div id="carouselExampleControls<?php echo $i; ?>" class="carousel slide" data-ride="carousel">
 								 <div class="carousel-inner">
 									 <div class="carousel-item active">
-										 <img class="d-block w-100" src="<?php echo IMAGES;
+										 <img class="d-block w-100" src="<?php echo UPLOAD_IMAGE_URL;
                   						    echo $valueproject->image; ?>" height="200px" alt="First slide">
 
 										 <h5 class="search-owl-first"><a href="#" class="pink"><?php echo $valueproject->orgname; ?></a></h5>

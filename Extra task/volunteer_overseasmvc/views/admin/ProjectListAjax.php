@@ -5,8 +5,6 @@ $assets_url = ASSETS_URL;
        $page = new Pagination();
        if (!empty($ProjectData->count_total)) {
            $total_records = $ProjectData->count_total;
-        
-           // $_SESSION['totalrecords'] = $total_records;
        }
        
 

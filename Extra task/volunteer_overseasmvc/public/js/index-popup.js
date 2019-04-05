@@ -166,6 +166,9 @@ var datepicker = document.getElementById("datepicker").value;
 
 
 var duration = document.getElementById("normal_select1").value;
+var valueselect=$( "#normal_select1 option:selected" ).text();
+
+$("select[name='selectduration']").val(duration);
 
 var selecteddate = document.getElementById("datepicker").value;
 document.getElementById("datepicker3").value=selecteddate;

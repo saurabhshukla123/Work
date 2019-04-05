@@ -1,14 +1,8 @@
 	$(document).ready(function () {
-			$("#datepicker").datepicker({
-				dateFormat: 'yy/mm/dd'
-			});
+		
 			$("#datepicker1").datepicker({
 				dateFormat: 'yy/mm/dd'
 			});
-			$("#datepicker3").datepicker({
-				dateFormat: 'yy/mm/dd'
-			});
-
 			$("#normal_select").dropkick({
 				mobile: true
 			});
@@ -215,13 +209,14 @@
 		dataType:'json',
 		data : {
 			'week' : normal_select
+		},		
+		beforeSend: function() {
+			$('#loading').show();
 		},
 		success : function(data) {
+			$('#loading').hide();
 		$('#cost_value').html(data);
-		// console.log(data)
-		//window.location.href = "search?page=1";
-
-		//location.reload();
+		
 		},
 
 

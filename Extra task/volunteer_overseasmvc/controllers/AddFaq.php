@@ -43,13 +43,13 @@ class AddFaq extends BaseController
                         $question = $_POST['question'];
                         $answer = $_POST['answer'];
                         $sequencenumber = $_POST['sequencenumber'];
-                    //    $data = array($question, $answer, $sequencenumber);
                         $value = $this->faqmodel->insert($question, $answer, $sequencenumber);
 
                         if ($value == true) {
                             echo '<script language="javascript">';
                             echo 'alert("Faq added successfully")';
                             echo '</script>';
+                            $_SESSION["status"]="added";
                             header('Location: FaqListing');
 
                         } else {
@@ -80,12 +80,12 @@ class AddFaq extends BaseController
                         $question = $_POST['question'];
                         $answer = $_POST['answer'];
                         $sequencenumber = $_POST['sequencenumber'];
-                       // $faq_update = new faq();
                         $result_faq_update = $this->faqmodel->updateFaq($question, $answer, $projectid, $sequencenumber);
                         if ($result_faq_update) {
                             echo '<script language="javascript">';
                             echo 'alert("Faq Updated successfully")';
                             echo '</script>';
+                            $_SESSION["status"]="updated";
                             header('Location:FaqListing');
                         } else {
                             echo '<script language="javascript">';

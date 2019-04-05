@@ -168,7 +168,7 @@ if($_SESSION["add1"]=="add1")
         $itemCount = count($_POST["item_name"]);
         $queryValue = "";
         for($i=0;$i<$itemCount;$i++) {
-            if(!empty($_POST["item_name"][$i]) || !empty($_POST["item_price"][$i])) {
+            if(!empty($_POST["item_name"][$i]) && !empty($_POST["item_price"][$i])) {
                 $itemValues++;
                 if($queryValue!="") {
                     $queryValue .= ",";
@@ -185,7 +185,7 @@ if($_SESSION["add1"]=="add1")
             $queryValue = "";
             $itemValues=0;
             for($i=0;$i<$itemCount;$i++) {
-                if(!empty($_POST["item_description"][$i]) || !empty($_POST["item_name_radio"][$i])) {
+                if(!empty($_POST["item_description"][$i]) && !empty($_POST["item_name_radio"][$i])) {
                     $itemValues++;
                     if($queryValue!="") {
                         $queryValue .= ",";
@@ -204,7 +204,7 @@ if($_SESSION["add1"]=="add1")
                 echo '<script language="javascript">';
                 echo 'alert("Project added successfully")';
                 echo '</script>';
-                $_SESSION["status"]=="added";
+                $_SESSION["status"]="added";
                 header('Location: ProjectLists');	
             
             }
@@ -432,14 +432,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
  }
 
 //  //code include checks ends
-// $var=mysqli_affected_rows($updateorg_project);
-// print_r("<pre>");
-// print_r($var);
 
-// print_r($updateorg_project);
-
-// die();
-// $value=$updateorg_project;
 
 
     if($updateorg_project)
@@ -638,7 +631,7 @@ if($_SESSION["add1"]=="add1")
             echo '<script language="javascript">';
             echo 'alert("Project added successfully")';
             echo '</script>';
-            $_SESSION["status"]=="added";
+            $_SESSION["status"]="added";
             header('Location: ProjectLists');	
         
         }
@@ -989,19 +982,6 @@ foreach($qty as $value) {
     {
         $filepath="";
     }
-
-
-
-
-
-
-
-
-
-
-    
-
-
 }
 
 

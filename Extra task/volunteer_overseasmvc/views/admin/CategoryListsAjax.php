@@ -69,7 +69,7 @@
                                                 </div> 
                                         </td>
                                         <td>
-                                        <a onclick="deletecountry('<?php echo $row->id; ?>')" href="javascript:void(0);" >  <button type="button" class="btn btn-fill" value="" id="delete">Delete </button></a>
+                                        <a onclick="deleteCategory('<?php echo $row->id; ?>')" href="javascript:void(0);" >  <button type="button" class="btn btn-fill" value="" id="delete">Delete </button></a>
                                       </td>
                                        
                                     </tr>

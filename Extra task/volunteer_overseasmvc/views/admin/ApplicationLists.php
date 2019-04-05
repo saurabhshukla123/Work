@@ -43,9 +43,14 @@ if (!empty($ApplicationPageData->total_result)) {
         <div class="wrapper admin-wrapper  small-header">
         <?php  include 'header-admin.php'; ?> 
             <main>
+                 <div id="loading" style="display:none;  background: url('<?php echo IMAGES; ?>/loading.gif') 50% 50% no-repeat rgb(249,249,249);">
+	             
+                 
+                 </div>
             <div id="ajax_part">
                 <section class="admin-section">
                     <div class="container">
+                 
                         <div class="with-box-shadow ">
                             <div class="section-title text-center">
                                 <h5>Application lists</h5>
@@ -143,44 +148,8 @@ if (!empty($ApplicationPageData->total_result)) {
             </main>
         </div>
         <script type="text/javascript" src="<?php echo ADMIN_ASSETS_URL;?>js/main.js"></script>
-        <script>
-            function deleteFaq(id){
-                if(confirm("Are you sure you want to delete this faq?")){
-                    window.location.href = 'FaqListing/edit/3/'+id;
-                }
-            }
-        </script>
-               <script>
-	$(document).on('click', '.page-link', function(){  
-           var page = $(this).attr("id");  
-		  
-           sort1(page);  
-      });
+        <script type="text/javascript" src="<?php echo ASSETS_URL;?>js/config.js"></script>
+        <script type="text/javascript" src="<?php echo ASSETS_URL;?>js/applicationList.js"></script>
 
-
-function sort1(page)
-{
-	var data1 = 'page='+page; 
-   var siteurl='<?php echo $siteurl=SITE_URL; ?>';
-  var url1= siteurl + 'ApplicationLists/ajaxData';
- 
-	$.ajax({
-
-    url :url1 ,
-    type : 'POST',  
-    data : data1,
-    success : function(data) {
-	 
-	  $('#ajax_part').html(data);
-	
-    },
-
-    });
-
-}
-
-
-
-</script>
     </body>
 </html>

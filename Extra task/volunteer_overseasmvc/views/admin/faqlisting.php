@@ -19,12 +19,7 @@
 if (!empty($faqPageData->total_result)) {
     $total_records = $faqPageData->total_result;
  
-	//$_SESSION['totalrecords'] = $total_records;
 }
- 
-
-
- 
  ?>   
 <!DOCTYPE html>
 <html lang="en">
@@ -40,10 +35,38 @@ if (!empty($faqPageData->total_result)) {
         <div class="wrapper admin-wrapper  small-header">
         <?php  include 'header-admin.php'; ?> 
             <main>
+            <div id="loading" style="display:none;  background: url('<?php echo IMAGES; ?>/loading.gif') 50% 50% no-repeat rgb(249,249,249);">
+	        </div>
             <div id="ajax_part">
                 <section class="admin-section">
                     <div class="container">
                         <div class="with-box-shadow ">
+                         <!-- code start for alert -->
+                         <?php if($_SESSION["status"]=="updated"){ 
+                                $_SESSION["status"]="";
+                                ?>
+                                <div class="alert alert-success update_success" role="alert" >
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                Faq updated sucessfully
+                            </div>
+                            <?php }?>
+                            <?php if($_SESSION["status"]=="added"){
+                                $_SESSION["status"]="";
+                                ?>
+                                <div class="alert alert-success update_success" role="alert" >
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                Faq added sucessfully
+                            </div>
+                            <?php }?>
+                            <?php if($_SESSION["status"]=="deleted"){
+                                $_SESSION["status"]="";
+                                ?>
+                                <div class="alert alert-success update_success" role="alert" >
+                                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                                Faq deleted sucessfully
+                            </div>
+                            <?php }?>
+                        <!-- code ends for alert -->
                             <div class="section-title text-center">
                                 <h5>FAQ list</h5>
                                 <div class="button-outer">
@@ -81,8 +104,6 @@ if (!empty($faqPageData->total_result)) {
                                      
                                                 if(!empty($faqPageData->faqdetails)){
                                                     foreach($faqPageData->faqdetails as $row){
-
-                                          
                                         ?>
                                     <tr>
                                       
@@ -110,8 +131,6 @@ if (!empty($faqPageData->total_result)) {
                                     }
                                     
                                     ?>
-                                    
-                                   
                                 </table>
                             </div>
                         </form>
@@ -134,44 +153,8 @@ if (!empty($faqPageData->total_result)) {
             </main>
         </div>
         <script type="text/javascript" src="<?php echo ADMIN_ASSETS_URL;?>js/main.js"></script>
-        <script>
-            function deleteFaq(id){
-                if(confirm("Are you sure you want to delete this faq?")){
-                    window.location.href = 'FaqListing/edit/3/'+id;
-                }
-            }
-        </script>
-               <script>
-	$(document).on('click', '.page-link', function(){  
-           var page = $(this).attr("id");  
-		  
-           sort1(page);  
-      });
-
-
-function sort1(page)
-{
-	var data1 = 'page='+page; 
-   var siteurl='<?php echo $siteurl=SITE_URL; ?>';
-  var url1= siteurl + 'FaqListing/ajaxData';
- 
-	$.ajax({
-
-    url :url1 ,
-    type : 'POST',  
-    data : data1,
-    success : function(data) {
-	 
-	  $('#ajax_part').html(data);
-	
-    },
-
-    });
-
-}
-
-
-
-</script>
+        <script type="text/javascript" src="<?php echo ASSETS_URL;?>js/commonalert.js"></script>
+        <script type="text/javascript" src="<?php echo ASSETS_URL;?>js/config.js"></script>
+        <script type="text/javascript" src="<?php echo ASSETS_URL;?>js/faqlist.js"></script>
     </body>
 </html>

@@ -83,6 +83,7 @@ $startdates=implode(', ', $startdatez);
 	<head>  
 			<title>Add Projects</title>
 			<meta charset="utf-8">
+		
 			<link rel="shortcut icon" href="<?php echo ADMIN_ASSETS_URL;?>images/favicon.ico"/>
 			<link rel="stylesheet" type="text/css" href="<?php echo ADMIN_ASSETS_URL;?>css/main.css">
 			<meta charset="UTF-8">
@@ -98,6 +99,9 @@ $startdates=implode(', ', $startdatez);
 			<link rel="stylesheet"  href="<?php echo ASSETS_URL;?>css/media.css" type="text/css"/>
 			
 			<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+
+
 		
 			<style>
 			.wizard {
@@ -1041,8 +1045,9 @@ span.round-tab:hover {
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>        
 
-<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css" rel="stylesheet"/>
+			<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+			<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css" rel="stylesheet"/>
+			
 
 		<script type="text/javascript">
 			$(document).ready(function(){
@@ -1120,12 +1125,13 @@ $(document).ready(function(){
         var $target = $(e.target);
     
         if ($target.parent().hasClass('disabled')) {
+			//alert("diasabled is clicked");
             return false;
         }
     });
 
     $(".next-step").click(function (e) {
-
+		
         var $active = $('.wizard .nav-tabs li.active');
         $active.next().removeClass('disabled');
         nextTab($active);
@@ -1139,11 +1145,11 @@ $(document).ready(function(){
     });
 
 $(".disabled").click(function (e) {
-	//console.log($(this));
-	 //$('tab-pane').each(function(index, item){
+
 
 	var id=$(this).attr("id");
     //  alert($(this).attr("id"));
+	
 		if(id=="rolestep2")
 		{
 			$("#step2").addClass("show");

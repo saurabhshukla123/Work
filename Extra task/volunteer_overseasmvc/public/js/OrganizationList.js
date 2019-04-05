@@ -11,7 +11,6 @@ $(document).on('click', '.page-link', function(){
 function sort1(page)
 {
 var data1 = 'page='+page; 
-//var siteurl='<?php echo $siteurl=SITE_URL; ?>';
 var url1= 'OrganizationLists/ajaxData';
 
 $.ajax({
@@ -19,8 +18,11 @@ $.ajax({
 url :url1 ,
 type : 'POST',  
 data : data1,
+beforeSend: function() {
+    $('#loading').show();
+    },
 success : function(data) {
-
+    $('#loading').hide();
 $('#ajaxdata').html(data);
 
 },
