@@ -1,0 +1,95 @@
+button.btn.btn-fill a {
+    color:#fff;
+}
+/*.btn-fill {
+    background: #5cb85c;
+    border-color: #5cb85c;
+}*/
+.stepwizard-step p {
+    margin-top: 10px;
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+
+}
+
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+.stepwizard .stepwizard-step .btn-primary{
+    color: #fff !important;
+    background: #265a88 !important;
+    border: 1px solid #265a88 !important;
+}
+.stepwizard .stepwizard-step .btn-fill{
+    color: #fff;
+    background: #5cb85c;
+    border: 1px solid #ccc;
+}
+.btn-default[disabled]{
+    background: #fff !important;
+    color: #95989a !important;
+}
+.form-control.datepicker{
+    padding: 15px 46px;
+}
+
+/*// for close button on gallery images//*/
+.img-wrap {
+    position: relative;
+
+
+}
+.img-wrap .close {
+    position: relative;
+    right: 5px;
+    z-index: 100;
+    color: #e74b5f;
+    opacity: 3;
+}
+.galleryImg-box{
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ccc;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
